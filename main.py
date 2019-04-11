@@ -74,20 +74,20 @@ def train(config):
                 sess.run(tf.assign(model.is_train,
                                    tf.constant(True, dtype=tf.bool)))
 
-                dev_loss = metrics["loss"]
-                if dev_loss < loss_save:
-                    loss_save = dev_loss
-                    patience = 0
-                else:
-                    patience += 1
-                if patience >= config.patience:
-                    lr /= 2.0
-                    loss_save = dev_loss
-                    patience = 0
-                sess.run(tf.assign(model.lr, tf.constant(lr, dtype=tf.float32)))
-                for s in summ:
-                    writer.add_summary(s, global_step)
-                writer.flush()
+                #dev_loss = metrics["loss"]
+                #if dev_loss < loss_save:
+                #    loss_save = dev_loss
+                #    patience = 0
+                #else:
+                #    patience += 1
+                #if patience >= config.patience:
+                #    lr /= 2.0
+                #    loss_save = dev_loss
+                #    patience = 0
+                #sess.run(tf.assign(model.lr, tf.constant(lr, dtype=tf.float32)))
+                #for s in summ:
+                #    writer.add_summary(s, global_step)
+                #writer.flush()
                 filename = os.path.join(
                     config.save_dir, "model_{}.ckpt".format(global_step))
                 saver.save(sess, filename)
