@@ -13,7 +13,7 @@ dev_file = os.path.join(home, "data", "squad", "dev-v1.1.json")
 test_file = os.path.join(home, "data", "squad", "dev-v1.1.json")
 glove_word_file = os.path.join(home, "data", "glove", "glove.840B.300d.txt")
 
-target_dir = "data"
+target_dir = "/content/data"
 log_dir = "log/event"
 save_dir = "log/model"
 answer_dir = "log/answer"
